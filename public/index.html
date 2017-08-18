@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Safetypay Signature</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/email.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <div class="c-Signature" id="js-signature">
+      <div class="c-Signature__content">
+
+        <div class="c-Signature__title">Ingresa los datos para tu firma:</div>
+        <div class="c-Signature__controls">
+          <label for="" class="c-Signature__label">Nombre y apellido:</label>
+          <input v-model="name" type="text" class="c-Signature__input c-Signature__input--name" placeholder="Ingresa tu nombre y apellido">
+          <label for="" class="c-Signature__label">Número de teléfono:</label>
+          <input v-model="telephone" type="text" class="c-Signature__input c-Signature__input--telephone" placeholder="Ingresa tu número de teléfono">
+          <label for="" class="c-Signature__label">Correo:</label>
+          <input v-model="email" type="text" class="c-Signature__input c-Signature__input--email" placeholder="Ingresa tu correo">
+          <label for="" class="c-Signature__label">Usuario de Skype</label>
+          <input v-model="skype" type="text" class="c-Signature__input c-Signature__input--skype" placeholder="Ingresa tu usuario de Skype">
+        </div>
+        <div class="c-Signature__preview">
+          <!-- Tabla Principal-->
+          <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#fffffff">
+            <tr>
+              <!--Logo Ecommerce Award-->
+              <td style="width:148px; height:126px; padding-left: 5px; background-color: #ffffff;">
+                <img src="https://jcahuana.github.io/safetypay-signature/img/ecommerce-award.jpg" alt="Ganador eCommerce Award" height="126" style="height:126px;display:block;"/>
+              </td>
+              <!--End: Logo Ecommerce Award-->
+
+              <!--Datos personales-->
+              <td align="left" style="background-color: #ffffff;" bgcolor="#fffffff">
+                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="">
+                  <!--Nombres-->
+                  <tr><td style="color:#135699; font-size:16px; font-weight: bold; font-family: 'Open Sans', Helvetica, Arial, sans-serif; padding-bottom: 7px;">{{ name }} | <span style="color:#135699; font-size:13px; font-weight: normal; font-family: 'Open Sans', Helvetica, Arial, sans-serif;">Business Analyst</span></td></tr>
+                  <!--Teléfono-->
+                  <tr><td style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; padding-bottom: 2px;">+ 51 (1) {{ telephone }}</td></tr>
+                  <!--Correo-->
+                  <tr><td style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; padding-bottom: 2px;">{{ email }}</td></tr>
+                  <!--Skype-->
+                  <tr><td style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; padding-bottom: 2px;">Skype: {{ skype }}</td></tr>
+                  <!--Dirección-->
+                  <tr><td style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; padding-bottom: 2px;">Av. La Floresta 497 Of. 302</td></tr>
+                  <!--Distrito-->
+                  <tr><td style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; padding-bottom: 2px;">San Borja | Lima | Perú</td></tr>
+                  <!--Espaciado-->
+                  <tr><td style="height: 15px;"></td></tr>
+                  <!--Logo Safetypay-->
+                  <tr>
+                    <td style="color:#135699; padding-bottom: 1px;">
+                      <img src="https://jcahuana.github.io/safetypay-signature/img/logo-safetypay.png" alt="Safetypay" width="84" height="17" style="height:17px; width:84px; display:block;"/>
+                    </td>
+                  </tr>
+                  <!--Web Safetypay-->
+                  <tr>
+                    <td style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; padding-bottom: 2px;">
+                      <a href="https://www.safetypay.com.pe" style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; text-decoration:none;">www.safetypay.com.pe</a>
+                    </td>
+                  </tr>
+
+                </table>
+              </td>
+              <!--End: Datos personales-->
+            </tr>
+          </table>
+          <!-- endof:Tabla Principal-->
+        </div>
+
+        <!--Signature code-->
+        <textarea class="c-Signature__code" id="js-signature-code">
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <style type="text/css">
+                /*Fuentes para clientes que lo soporten*/
+                @font-face {
+                  font-family: 'Open Sans';
+                  font-style: normal;
+                  font-weight: 400;
+                  src: local("Open Sans"), local("OpenSans"), url("http://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff") format("woff");
+                }
+                @font-face {
+                  font-family: 'Open Sans';
+                  font-style: normal;
+                  font-weight: 600;
+                  src: local("Open Sans"), local("OpenSans"), url("http://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff") format("woff");
+                }
+                /* CLIENT-SPECIFIC STYLES */
+                body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+                table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+                img { -ms-interpolation-mode: bicubic; }
+
+                /* RESET STYLES */
+                img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+                table { border-collapse: collapse !important; }
+                body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+
+                .appleLinks a {color:#404040; text-decoration:none;}
+                .appleLinksWhite a {color:#ffffff; text-decoration:none;}
+
+                /* iOS BLUE LINKS */
+                a[x-apple-data-detectors] {
+                  color: inherit !important;
+                  text-decoration: none !important;
+                  font-size: inherit !important;
+                  font-family: inherit !important;
+                  font-weight: inherit !important;
+                  line-height: inherit !important;
+                }
+
+                /* MEDIA QUERIES */
+                @media screen and (max-width: 480px) {
+                  .mobile-hide {
+                    display: none !important;
+                  }
+                  .mobile-center {
+                    text-align: center !important;
+                  }
+                }
+                /* ANDROID CENTER FIX */
+                div[style*="margin: 16px 0;"] { margin: 0 !important; }
+              </style>
+            </head>
+            <body style="margin: 0 !important; padding: 0 !important; background-color: #ffffff;" bgcolor="#ffffff">
+
+              <!-- Tabla Principal-->
+              <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#fffffff">
+                <tr>
+                  <!--Logo Ecommerce Award-->
+                  <td style="width:148px; height:126px; padding-left: 5px; background-color: #ffffff;">
+                    <img src="img/ecommerce-award.jpg" alt="Ganador eCommerce Award" height="126" style="height:126px;display:block;"/>
+                  </td>
+                  <!--End: Logo Ecommerce Award-->
+
+                  <!--Datos personales-->
+                  <td align="left" style="background-color: #ffffff;" bgcolor="#fffffff">
+                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="">
+                      <!--Nombres-->
+                      <tr><td style="color:#135699; font-size:16px; font-weight: bold; font-family: 'Open Sans', Helvetica, Arial, sans-serif; padding-bottom: 7px;">{{ name }} | <span style="color:#135699; font-size:13px; font-weight: normal; font-family: 'Open Sans', Helvetica, Arial, sans-serif;">Business Analyst</span></td></tr>
+                      <!--Teléfono-->
+                      <tr><td style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; padding-bottom: 2px;">+ 51 (1) {{ telephone }}</td></tr>
+                      <!--Correo-->
+                      <tr><td style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; padding-bottom: 2px;">{{ email }}</td></tr>
+                      <!--Skype-->
+                      <tr><td style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; padding-bottom: 2px;">Skype: {{ skype }}</td></tr>
+                      <!--Dirección-->
+                      <tr><td style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; padding-bottom: 2px;">Av. La Floresta 497 Of. 302</td></tr>
+                      <!--Distrito-->
+                      <tr><td style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; padding-bottom: 2px;">San Borja | Lima | Perú</td></tr>
+                      <!--Espaciado-->
+                      <tr><td style="height: 15px;"></td></tr>
+                      <!--Logo Safetypay-->
+                      <tr>
+                        <td style="color:#135699; padding-bottom: 1px;">
+                          <img src="img/logo-safetypay.png" alt="Safetypay" width="84" height="17" style="height:17px; width:84px; display:block;"/>
+                        </td>
+                      </tr>
+                      <!--Web Safetypay-->
+                      <tr>
+                        <td style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; padding-bottom: 2px;">
+                          <a href="https://www.safetypay.com.pe" style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; text-decoration:none;">www.safetypay.com.pe</a>
+                        </td>
+                      </tr>
+
+                    </table>
+                  </td>
+                  <!--End: Datos personales-->
+                </tr>
+              </table>
+              <!-- endof:Tabla Principal-->
+
+            </body>
+          </html>
+        </textarea>
+        <!--End: Signature code-->
+
+        <button class="c-Signature__copyButton" data-clipboard-target="#js-signature-code">Copiar firma</button>
+
+      </div>
+    </div>
+  </body>
+</html>
