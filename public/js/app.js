@@ -5,6 +5,7 @@ $(function(){
     el: '#js-signature',
     data: {
       name: 'Giuliano Tori',
+      job: 'Business Analyst',
       telephone: '7175915 - 124',
       email: 'jtori@safetypay.com',
       skype: 'jtori_safetypay'
