@@ -23,6 +23,8 @@
         <div class="c-Signature__controls">
           <label for="" class="c-Signature__label">Nombre y apellido:</label>
           <input v-model="name" type="text" class="c-Signature__input c-Signature__input--name" placeholder="Ingresa tu nombre y apellido">
+          <label for="" class="c-Signature__label">Cargo:</label>
+          <input v-model="job" type="text" class="c-Signature__input c-Signature__input--job" placeholder="Ingresa el nombre de tu cargo">
           <label for="" class="c-Signature__label">Número de teléfono:</label>
           <input v-model="telephone" type="text" class="c-Signature__input c-Signature__input--telephone" placeholder="Ingresa tu número de teléfono">
           <label for="" class="c-Signature__label">Correo:</label>
@@ -35,16 +37,19 @@
           <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#fffffff">
             <tr>
               <!--Logo Ecommerce Award-->
-              <td style="width:148px; height:126px; padding-left: 5px; background-color: #ffffff;">
-                <img src="https://jcahuana.github.io/safetypay-signature/img/ecommerce-award.jpg" alt="Ganador eCommerce Award" height="126" style="height:126px;display:block;"/>
+              <td style="width:150px; padding-left: 5px; background-color: #ffffff; border-right: 3px solid #135699">
+                <img src="img/logo-ecommerce-award.png" alt="Ganador eCommerce Award" width="130" style="width: 130px; height:128px; display:block;"/>
               </td>
               <!--End: Logo Ecommerce Award-->
+
+              <!-- Divider -->
+              <td width="20" style="width: 20px; background-color: #fff;"></td>
 
               <!--Datos personales-->
               <td align="left" style="background-color: #ffffff;" bgcolor="#fffffff">
                 <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="">
                   <!--Nombres-->
-                  <tr><td style="color:#135699; font-size:16px; font-weight: bold; font-family: 'Open Sans', Helvetica, Arial, sans-serif; padding-bottom: 7px;">{{ name }} | <span style="color:#135699; font-size:13px; font-weight: normal; font-family: 'Open Sans', Helvetica, Arial, sans-serif;">Business Analyst</span></td></tr>
+                  <tr><td style="color:#135699; font-size:16px; font-weight: bold; font-family: 'Open Sans', Helvetica, Arial, sans-serif; padding-bottom: 7px;">{{ name }} | <span style="color:#135699; font-size:13px; font-weight: normal; font-family: 'Open Sans', Helvetica, Arial, sans-serif;">{{ job }}</span></td></tr>
                   <!--Teléfono-->
                   <tr><td style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; padding-bottom: 2px;">+ 51 (1) {{ telephone }}</td></tr>
                   <!--Correo-->
@@ -113,6 +118,7 @@
                 /* iOS BLUE LINKS */
                 a[x-apple-data-detectors] {
                   color: inherit !important;
+                  color: #135699 !important;
                   text-decoration: none !important;
                   font-size: inherit !important;
                   font-family: inherit !important;
@@ -139,16 +145,19 @@
               <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#fffffff">
                 <tr>
                   <!--Logo Ecommerce Award-->
-                  <td style="width:148px; height:126px; padding-left: 5px; background-color: #ffffff;">
-                    <img src="https://jcahuana.github.io/safetypay-signature/img/ecommerce-award.jpg" alt="Ganador eCommerce Award" height="126" style="height:126px;display:block;"/>
+                  <td style="width:150px; padding-left: 5px; background-color: #ffffff; border-right: 3px solid #135699">
+                    <img src="https://jcahuana.github.io/safetypay-signature/img/logo-ecommerce-award.png" alt="Ganador eCommerce Award" width="130" height="128" style="width:130px; height:128px; display:block;"/>
                   </td>
                   <!--End: Logo Ecommerce Award-->
+
+                  <!-- Divider -->
+                  <td width="20" style="width: 20px; background-color: #fff;"></td>
 
                   <!--Datos personales-->
                   <td align="left" style="background-color: #ffffff;" bgcolor="#fffffff">
                     <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="">
                       <!--Nombres-->
-                      <tr><td style="color:#135699; font-size:16px; font-weight: bold; font-family: 'Open Sans', Helvetica, Arial, sans-serif; padding-bottom: 7px;">{{ name }} | <span style="color:#135699; font-size:13px; font-weight: normal; font-family: 'Open Sans', Helvetica, Arial, sans-serif;">Business Analyst</span></td></tr>
+                      <tr><td style="color:#135699; font-size:16px; font-weight: bold; font-family: 'Open Sans', Helvetica, Arial, sans-serif; padding-bottom: 7px;">{{ name }} | <span style="color:#135699; font-size:13px; font-weight: normal; font-family: 'Open Sans', Helvetica, Arial, sans-serif;">{{ job }}</span></td></tr>
                       <!--Teléfono-->
                       <tr><td style="color:#135699; font-size:11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; padding-bottom: 2px;">+ 51 (1) {{ telephone }}</td></tr>
                       <!--Correo-->
@@ -162,10 +171,9 @@
                       <!--Espaciado-->
                       <tr><td style="height: 15px;"></td></tr>
                       <!--Logo Safetypay-->
-                      
                       <tr>
                         <td style="color:#135699; padding-bottom: 1px;">
-                          <img src="https://jcahuana.github.io/safetypay-signature/img/logo-safetypay.png" alt="Safetypay" width="84" height="17" style="height:17px; width:84px; display:block;"/>
+                          <img src="img/logo-safetypay.png" alt="Safetypay" width="84" height="17" style="height:17px; width:84px; display:block;"/>
                         </td>
                       </tr>
                       <!--Web Safetypay-->

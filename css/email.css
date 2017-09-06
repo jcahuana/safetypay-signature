@@ -31,7 +31,8 @@ body { height: 100% !important; margin: 0 !important; padding: 0 !important; wid
 
 /* iOS BLUE LINKS */
 a[x-apple-data-detectors] {
-  color: inherit !important;
+  /*color: inherit !important;*/
+  color: #135699 !important;
   text-decoration: none !important;
   font-size: inherit !important;
   font-family: inherit !important;
